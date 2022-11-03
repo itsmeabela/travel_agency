@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Header, List, Map } from "./components";
+// //styles
+import { Content } from "./App.style";
+import Split from "react-split";
+import { GlobalStyle } from "./GlobalStyle";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Split sizes={[40, 60]} style={{ display: "flex" }}>
+        <Content>
+          <List />
+        </Content>
+        <Content>
+          <Map />
+        </Content>
+      </Split>
+      <GlobalStyle />
+    </>
   );
 }
-
 export default App;
